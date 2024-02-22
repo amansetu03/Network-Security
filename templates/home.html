@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Security</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+</head>
+<body>
+    <div class="header">
+        <h1>Network Security</h1>
+    </div>
+    
+    <div id="description">
+        <p>Data Encrypted Using Homomorphic Encryption</p>
+        <ul class="all-details">
+            <li class="nav-item"><a href="https://github.com/amansetu03/Network-Security" target="_blank"><i class='fa fa-github'></i></a></li>
+        </ul>
+    </div>
+   <div class="mainbody">
+        <div class="translator-container">
+            <form action="{{ url_for('hello')}}"method="post">
+                <input type="text" name="inputMassage" id="inputField" class="input-field" placeholder="Type here...">
+                <textarea id="outputField" class="output-field" readonly>{{Result}}</textarea>
+                <button type="submit" id="translateBtn">Encrypte</button>
+            </form>
+        </div>        
+        
+    </div> 
+</body>
+</html>
