@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import render_template, request
+from encryptionSelection import encryptionProsess
 
 app = Flask(__name__)
 
@@ -9,11 +10,10 @@ def home():
 
 @app.route('/hello',methods=['POST'])
 def hello():
-    mes = request.form['inputMassage']
-    rm = ""
-    for i in mes:
-        rm += chr(ord(i)+3)
-    
-    return render_template('home.html', Result=f"{rm}")
+    message = request.form['inputMassage']
+    encryptionType = request.form['encryptionType'] 
+    #call encryption method
+    encryptedMessage = encryptionProsess(message, encryptionType)
+    return render_template('home.html', Result=f"{encryptedMessage}")
 if __name__ == "__main__":
     app.run()
